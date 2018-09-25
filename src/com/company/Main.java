@@ -27,21 +27,18 @@ public class Main {
         while(guessNum != pickedNum)
         {
             System.out.println(pickedNum);
-            guessNum = input.nextInt();
             if(guessNum < pickedNum)
             {
                 System.out.println("Your guess is less than the random number, try again!");
                 tries++;
             }
-            else if (guessNum > pickedNum)
+            else
             {
                 System.out.println("Your guess is greater than the random number, try again!");
                 tries++;
             }
-            else
-            {
-                System.out.println("Congrats! You guess the correct number in " + tries + " tries!");
-            }
+            guessNum = input.nextInt();
         }
+        System.out.println("Congrats! You guess the correct number in " + tries + " tries!");
     }
 }
