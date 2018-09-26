@@ -13,6 +13,7 @@ public class AiGuess {
         int lower = 1;
         int random;
         int guessNum;
+        int tries = 1;
         Scanner input = new Scanner(System.in);
         String answer = "";
         while(!answer.equals("correct"))
@@ -24,15 +25,17 @@ public class AiGuess {
                 lower = random + 1;
                 guessNum = (upper + lower) / 2;
                 System.out.println("My guess is: " + guessNum);
+                tries++;
             }
             else if(answer.equals("lower"))
             {
                 upper = random - 1;
                 guessNum = (upper + lower) / 2;
                 System.out.println("My guess is: " + guessNum);
+                tries++;
             }
         }
-        System.out.println("I got it correct!");
+        System.out.println("I got it correct in " + tries + " tries!");
         input.close();
     }
 }
