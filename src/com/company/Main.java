@@ -26,7 +26,6 @@ public class Main {
         int tries = 1;
         while(guessNum != pickedNum)
         {
-            System.out.println(pickedNum);
             if(guessNum < pickedNum)
             {
                 System.out.println("Your guess is less than the random number, try again!");
