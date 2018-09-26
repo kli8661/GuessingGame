@@ -40,5 +40,6 @@ public class Main {
             guessNum = input.nextInt();
         }
         System.out.println("Congrats! You guess the correct number in " + tries + " tries!");
+        input.close();
     }
 }
