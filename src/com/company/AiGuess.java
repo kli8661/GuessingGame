@@ -11,8 +11,8 @@ public class AiGuess {
         System.out.println("Say 'higher' if guess is higher, 'lower' if your guess is lower, and 'correct' if it's correct");
         int upper = 100;
         int lower = 1;
-        int random = 0;
-        int guessNum = 0;
+        int random;
+        int guessNum;
         Scanner input = new Scanner(System.in);
         String answer = "";
         while(!answer.equals("correct"))
