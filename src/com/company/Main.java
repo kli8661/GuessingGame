@@ -9,9 +9,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Pick your difficulty! 1 for 10, 2 for 100, 3 for 1000, or 4 for 10000!");
         Scanner input = new Scanner(System.in);
-        int range = input.nextInt();
+        int range = 0;
+        int pickedNum = 0;
+        boolean validDiff = false;
+        while(!validDiff)
+        {
+            System.out.println("Pick your difficulty! 1 for 10, 2 for 100, 3 for 1000, or 4 for 10000!");
+            try
+            {
+                range = input.nextInt();
+                validDiff = true;
+            }
+            catch(InputMismatchException e)
+            {
+                System.out.println("Number not words");
+                input.next();
+            }
+        }
         if (range == 1)
             range = 10;
         if (range == 2)
@@ -21,13 +36,26 @@ public class Main {
         else if (range == 4)
             range = 10000;
         Random randomNum = new Random();
-        int pickedNum = randomNum.nextInt(range) + 1;
+        while(!validDiff)
+        {
+            try
+            {
+                pickedNum = randomNum.nextInt(range) + 1;
+                validDiff = true;
+            }
+            catch(InputMismatchException e)
+            {
+                System.out.println("Numbers not words");
+                input.next();
+            }
+        }
         System.out.println("Your number is between 1 and " + range + ", start guessing!");
         int guessNum = range + 1;
-        int tries = 0;
+        int tries = 1;
         while (guessNum != pickedNum)
         {
-            try {
+            try
+            {
                 guessNum = input.nextInt();
                 if (guessNum < pickedNum) {
                     System.out.println("Your guess is less than the random number, try again!");
