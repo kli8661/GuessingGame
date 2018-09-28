@@ -49,7 +49,7 @@ public class Main {
                 input.next();
             }
         }
-        System.out.println("Your number is between 1 and " + range + ", start guessing!");
+        System.out.println("Your number is between 0 and " + range + ", start guessing!");
         int guessNum = range + 1;
         int tries = 1;
         while (guessNum != pickedNum)
